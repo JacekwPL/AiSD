@@ -4,13 +4,13 @@ class Star:
         self.__pos = position
 
     def __str__(self):
-        return f'{self.__name} {self.__pos}'
+        return f'{self.__name} {self.pos}'
 
     def getName(self) -> str:
         return self.__name
 
-    def setName(self, name: str):
-        self.__name = name
+    def setName(self, newName: str):
+        self.__name = newName
 
     def getPosition(self):
         return self.__pos
@@ -22,16 +22,6 @@ class Star:
 class ListOfStars:
     def __init__(self):
         self.Lista = {}
-
-    def __len__(self):
-        return len(self.Lista)
-
-    def __str__(self) -> str:
-        xpp = ""
-        for key in self.Lista.keys():
-            xpp += f'Nazwa gwiazdy: {key}, pozycja: {self.Lista[key]}'
-
-        return xpp
 
     def importFromFile(self, path):
         pass
@@ -59,6 +49,14 @@ class ListOfStars:
             print(str(self), file=f)
 
             f.close()
+
+    def __len__(self):
+        return len(self.Lista)
+
+    def __str__(self) -> str:
+        xpp = ""
+        for key in self.Lista.keys():
+            xpp += f'Nazwa gwiazdy: {key}, pozycja: {self.Lista[key]}'
 
 
 if __name__ == '__main__':
