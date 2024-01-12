@@ -1,11 +1,12 @@
-from StarLogic import Star, ListOfStars
+from StarLogic import *
 
 if __name__ == '__main__':
-    while True:
-        operacja = input('prompt')
+    import random, string
 
-        match operacja:
-            case '1':
-                pass
+    dt = {random.choice(string.ascii_letters): random.randint(0, 15000) for _ in range(50)}
 
-        break
+    print(dt)
+
+    lista = ListOfStars()
+    lista.importFromFile('gwiazdy.txt')
+    print(str(lista))
