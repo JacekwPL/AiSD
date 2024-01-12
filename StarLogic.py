@@ -34,10 +34,15 @@ class ListOfStars:
         return xpp
 
     def sort(self, sl: dict = None) -> dict:
-        war = False
+        """
+        params:
+            sl - Dictionary provided by user. If None, sl = self.ListOfStars
+
+        returns:
+            sorted dictionary by 3rd parameter of position in class: Star
+        """
         if sl is None:
-            sl = self.Lista
-            war = True
+            self.Lista = self.sort(self.Lista)
 
         if len(sl) == 0:
             return {}
@@ -53,11 +58,10 @@ class ListOfStars:
             else:
                 dt2[key] = sl[key]
 
-        if war:
-            self.Lista = self.sort(dt1) | {keys[0]: sl[keys[0]]} | self.sort(dt2)
         return self.sort(dt1) | {keys[0]: sl[keys[0]]} | self.sort(dt2)
 
     def add(self, star: Star):
+        """Adding new item to self.ListOfStars, if item is already in list, raise error"""
         for key in self.Lista.keys():
             if star.getPosition() == self.Lista[key]:
                 raise ValueError('Two stars can\'t have same position!')
@@ -75,6 +79,7 @@ class ListOfStars:
         self.Lista.pop(list(self.Lista.keys())[index])
 
     def remove(self, arg):
+        """Removing item from list by index or by object"""
         if isinstance(arg, int):
             self.__removeIndex(arg)
         elif isinstance(arg, Star):
