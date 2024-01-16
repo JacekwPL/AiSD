@@ -28,8 +28,8 @@ class ListOfStars:
 
     def __str__(self) -> str:
         xpp = ""
-        for key in self.Lista.keys():
-            xpp += f'Nazwa gwiazdy: {key}, pozycja: {self.Lista[key]}\n'
+        for i, key in enumerate(self.Lista.keys()):
+            xpp += f'index {i}: Nazwa gwiazdy: {key}, pozycja: {self.Lista[key]}\n'
 
         return xpp
 
