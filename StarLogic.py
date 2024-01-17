@@ -43,6 +43,7 @@ class ListOfStars:
         """
         if sl is None:
             self.Lista = self.sort(self.Lista)
+            return self.Lista
 
         if len(sl) == 0:
             return {}
@@ -69,8 +70,8 @@ class ListOfStars:
                 raise ValueError('Two stars can\'t have same name!')
         self.Lista[star.getName()] = star.getPosition()
 
-    def __removeStar(self, star: Star):
-        self.Lista.pop(star.getName())
+    def __removeStar(self, name: str):
+        self.Lista.pop(name)
 
     def __removeIndex(self, index: int):
         if index >= len(self.Lista) or index < 0:
@@ -82,7 +83,7 @@ class ListOfStars:
         """Removing item from list by index or by object"""
         if isinstance(arg, int):
             self.__removeIndex(arg)
-        elif isinstance(arg, Star):
+        elif isinstance(arg, str):
             self.__removeStar(arg)
         else:
             raise ValueError('remove() only can be usage with class: Star or int: integer')
@@ -91,7 +92,7 @@ class ListOfStars:
         with open(path, 'r', encoding='UTF-8') as f:
             for line in f.readlines():
                 line = line.split()
-                star = Star(line[0], (float(line[1]), float(line[2]), float(line[3])))  # or tuple(line[1])
+                star = Star(line[0], (float(line[1]), float(line[2]), float(line[3])))
                 self.add(star)
 
     def exportToFile(self, path):
@@ -102,10 +103,16 @@ class ListOfStars:
 
             f.close()
 
+    def clear(self):
+        while self.Lista.__len__() > 0:
+            self.remove(0)
+
 
 if __name__ == '__main__':
-    import random, string
-    stars = [Star(random.choice(string.ascii_letters), tuple(random.randint(0, 100) for _ in range(3))) for _ in range(50)]
+    import random
+    import string
+    stars = [Star(random.choice(string.ascii_letters), tuple(random.randint(0, 100)
+                                                             for _ in range(3))) for _ in range(50)]
     lista = ListOfStars()
     for elem in stars:
         # print(str(elem))
