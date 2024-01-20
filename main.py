@@ -19,6 +19,9 @@ if __name__ == '__main__':
 
         match operacja:
             case '1':
+                if mainLista.__len__() == 0:
+                    print("Lista gwiazd jest pusta!")
+
                 print(str(mainLista))
 
             case '2':
@@ -35,10 +38,13 @@ if __name__ == '__main__':
                 else: print("Zła ilość parametrów!")
 
             case '3':
-                zm = input(f'Którą gwiazdę chcesz usunąć?\n{str(mainLista)}\nNapisz liczbę lub nazwę gwiazdy: ')
-                if zm.isnumeric():
-                    zm = int(zm)
-                mainLista.remove(zm)
+                if mainLista.__len__() == 0:
+                    print("Lista gwiazd jest pusta!")
+                else:
+                    zm = input(f'Którą gwiazdę chcesz usunąć?\n{str(mainLista)}\nNapisz liczbę lub nazwę gwiazdy: ')
+                    if zm.isnumeric():
+                        zm = int(zm)
+                    mainLista.remove(zm)
 
             case '4':
                 mainLista.sort()
