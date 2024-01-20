@@ -1,31 +1,31 @@
 Syriusz 23.0 55.0 2.0
 Betelgeza 39.0 8.0 4.0
-Wega 39.0 41.0 8.0
-Antares 84.0 74.0 13.0
-Polarna 68.0 7.0 17.0
-Rigel 90.0 99.0 20.0
-Aldebaran 73.0 82.0 25.0
-Altair 61.0 99.0 26.0
-Deneb 67.0 26.0 27.0
-Kanopus 40.0 75.0 29.0
-Proxima Centauri 34.0 94.0 31.0
-Alpha Centauri A 23.0 8.0 40.0
-Alpha Centauri B 55.0 86.0 41.0
-Arktur 4.0 67.0 43.0
-Fomalhaut 25.0 68.0 47.0
-Regulus 61.0 27.0 51.0
-Castor 84.0 49.0 55.0
-Pollux 5.0 22.0 56.0
-Kapella 100.0 43.0 65.0
-Spica 44.0 98.0 67.0
-Alferatz 1.0 54.0 72.0
-Bellatrix 23.0 98.0 72.0
-Achernar 64.0 14.0 77.0
-Epsilon Eridani 72.0 97.0 78.0
-Eta Carinae 71.0 66.0 79.0
-Zeta Tauri 61.0 52.0 80.0
-Delta Orionis 97.0 8.0 82.0
-Gamma Crucis 54.0 45.0 83.0
-Epsilon Scorpii 62.0 63.0 92.0
-My Cephei 100.0 38.0 95.0
+Rigel 39.0 41.0 8.0
+Aldebaran 84.0 74.0 13.0
+Antares 68.0 7.0 17.0
+Wega 90.0 99.0 20.0
+Altair 73.0 82.0 25.0
+Proksyma 61.0 99.0 26.0
+Polaris 67.0 26.0 27.0
+Regulus 40.0 75.0 29.0
+Deneb 34.0 94.0 31.0
+Spika 23.0 8.0 40.0
+Kapella 55.0 86.0 41.0
+Mimosa 4.0 67.0 43.0
+Kastor 25.0 68.0 47.0
+Polluks 61.0 27.0 51.0
+Algol 84.0 49.0 55.0
+Mirfak 5.0 22.0 56.0
+Hamal 100.0 43.0 65.0
+Mirach 44.0 98.0 67.0
+Achernar 1.0 54.0 72.0
+Acrux 23.0 98.0 72.0
+Zubenelgenubi 64.0 14.0 77.0
+Zubenelakrab 72.0 97.0 78.0
+Fomalhaut 71.0 66.0 79.0
+Mirzam 61.0 52.0 80.0
+Dubhe 97.0 8.0 82.0
+Wezen 54.0 45.0 83.0
+Mintaka 62.0 63.0 92.0
+Alnitak 100.0 38.0 95.0
 Nieeeno,_za_taki_programik_to_5_sie_nalezy 5.0 5.0 999.0
