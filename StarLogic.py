@@ -82,18 +82,41 @@ class ListOfStars:
     def remove(self, arg):
         """Removing item from list by index or by object"""
         if isinstance(arg, int):
-            self.__removeIndex(arg)
+            try:
+                self.__removeIndex(arg)
+            except ValueError as e:
+                print(f'Error: {e}')
         elif isinstance(arg, str):
-            self.__removeStar(arg)
+            try:
+                self.__removeStar(arg)
+            except KeyError:
+                print("Nie ma takiej gwiazdy!")
         else:
             raise ValueError('remove() only can be usage with class: Star or int: integer')
 
     def importFromFile(self, path):
-        with open(path, 'r', encoding='UTF-8') as f:
-            for line in f.readlines():
-                line = line.split()
-                star = Star(line[0], (float(line[1]), float(line[2]), float(line[3])))
-                self.add(star)
+        try:
+            with open(path, 'r', encoding='UTF-8') as f:
+                lines = f.readlines()
+
+                if not lines:
+                    print("Plik nie spełnia wymagań lub jest pusty.")
+                    return
+
+                for line in lines:
+                    parts = line.split()
+                    if len(parts) != 4:
+                        print("Plik nie spełnia wymagań lub jest pusty.")
+                        return
+
+                    try:
+                        star = Star(parts[0], (float(parts[1]), float(parts[2]), float(parts[3])))
+                        self.add(star)
+                    except (ValueError, IndexError):
+                        print("Plik nie spełnia wymagań lub jest pusty.")
+                        return
+        except FileNotFoundError:
+            print(f"Plik '{path}' nie znaleziony.")
 
     def exportToFile(self, path):
         with open(path, 'w+', encoding='UTF-8') as f:
